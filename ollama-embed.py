@@ -2,11 +2,10 @@ import ollama
 
 def test_embedding_model(text):
     # Load the model
-    model = ollama.load_model('path/to/your/model')
-
-    # Generate embeddings for the input text
-    embeddings = model.embed(text)
-
+    embeddings = ollama.embed(
+        model='nomic-embed-text:latest',
+        input='Llamas are members of the camelid family',
+    )
     return embeddings
 
 if __name__ == "__main__":
